@@ -1,0 +1,22 @@
+[
+    {
+        "description": "Incorrect login data",
+        "email": "jared.salinas@wizeline.com",
+        "password": "Admin12345!"
+    },
+    {
+        "description": "Incorrect email address",
+        "email": "jared.salinas@yopmail.com",
+        "password": "Admin12345!"
+    },
+    {
+        "description": "Wrong password data",
+        "email": "jared.salinas@wizeline.com",
+        "password": "Admin"
+    },
+    {
+        "description": "Blank data in login",
+        "email": "",
+        "password": ""
+    }
+]

@@ -1,0 +1,16 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+.github/
+/tests-examples/
+/user-data/
+TodoistAutomation.code-workspace
+/tests/example.spec.js
+.DS_Store
+browserstack.yml
+local.log
+log
+.env
+
