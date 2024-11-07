@@ -46,12 +46,11 @@ test('Create 10 tasks', async({page})=>{
 
 test.afterEach(async ({page}, testInfo) => {
     const testName = testInfo.title;
-    const status = testInfo.status;
+    const status = testInfo.status; // 'passed', 'failed', 'skipped'
     console.log(status);
-    let message = `The test "${testName}" has ${status}. :smile:`;
-  
+    let message = `The test "${testName}" has ${status}. :smile: ✅`;
     if (status === 'failed') {
-      message = `Warning!, the test "${testName}" has FAILED. :sad:`;
+      message = `Warning!, the test "${testName}" has FAILED. :sad: ❌`;
     }
     await SlackNotificationUtils.sendSlackNotification(message);
 });
