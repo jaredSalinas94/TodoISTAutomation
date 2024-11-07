@@ -1,8 +1,9 @@
-const { test, expect, chromium, firefox, webkit } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 const {POManager} = require('../pageobjects/POManager');
 const {DateUtils} = require('../utils/DateUtils');
 const loginData = JSON.parse(JSON.stringify(require('../dataset/logInDataset.json')));
 const taskData = JSON.parse(JSON.stringify(require('../dataset/taskDataset.json')));
+const {SlackNotificationUtils} = require('../utils/SlackNotificationsUtils');
 import dotenv from 'dotenv';
 dotenv.config();
 let mainPage = null;
@@ -43,3 +44,14 @@ test('Create 10 tasks', async({page})=>{
     }
 });
 
+test.afterEach(async ({page}, testInfo) => {
+    const testName = testInfo.title;
+    const status = testInfo.status;
+    console.log(status);
+    let message = `The test "${testName}" has ${status}. :smile:`;
+  
+    if (status === 'failed') {
+      message = `Warning!, the test "${testName}" has FAILED. :sad:`;
+    }
+    await SlackNotificationUtils.sendSlackNotification(message);
+});
