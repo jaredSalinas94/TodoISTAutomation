@@ -13,7 +13,7 @@ The automation was made in Playwrigth and Javascript.
 
 [Node.js](https://nodejs.org/en) Download Node.js
 
-[Playwright.dev](https://playwright.dev/docs/intro) Install Playwright
+[Playwright.dev](https://playwright.dev/docs/intro) Install Playwright using the following command
 
 >npm init playwright@latest
 
@@ -56,6 +56,12 @@ Run in terminal with one of these options:
 <br/>
 
 >npx playwright test --project=browsername <b>--headed</b>
+
+## Execute only a file
+
+Execute the following command
+
+>npx playwright test "tests/testName.spec.js"
 
 ## Execute in Browser stack
 
