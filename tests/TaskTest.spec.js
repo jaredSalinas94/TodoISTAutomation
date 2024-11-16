@@ -8,11 +8,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 let mainPage = null;
 
-
 test.beforeEach(async ({ page }) => {
     const poManager = new POManager(page);
     mainPage = poManager.getMainPage();
-    await mainPage.goTo();
+    await mainPage.goTo(process.env.url);
 });
 
 test('Create a new task', async({page})=>{
@@ -23,7 +22,7 @@ test('Create a new task', async({page})=>{
     const taskname = taskData[0].name + DateUtils.getFormattedDate();
     const taskDescription = taskData[0].description + DateUtils.getFormattedDate();
     const isTaskVisible = (await dashboardPage.createNewTask(taskname, taskDescription));
-    expect(isTaskVisible,"ERROR: Task is not displayed in the dashboard");
+    expect(isTaskVisible, taskData[0].errorMessage);
     await dashboardPage.deleteTask(taskname);
     await dashboardPage.isDashboardVisible(process.env.email);
 });
@@ -38,9 +37,8 @@ test('Create 10 tasks', async({page})=>{
         var taskname = index + taskData[0].name + DateUtils.getFormattedDate();
         var taskDescription = taskData[0].description + DateUtils.getFormattedDate();
         var isTaskVisible = (await dashboardPage.createNewTask(taskname, taskDescription));
-        expect(isTaskVisible,"ERROR: Task is not displayed in the dashboard");
+        expect(isTaskVisible, taskData[0].errorMessage);
         await dashboardPage.deleteTask(taskname);
-        //await dashboardPage.isDashboardVisible(process.env.email);
     }
 });
 

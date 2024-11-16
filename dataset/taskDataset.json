@@ -1,6 +1,7 @@
 [
     {
         "name": "Task: ",
-        "description": "A random task: "
+        "description": "A random task: ",
+        "errorMessage": "ERROR: Task is not displayed in the dashboard"
     }
 ]

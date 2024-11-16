@@ -2,21 +2,31 @@
     {
         "description": "Incorrect login data",
         "email": "jared.salinas@wizeline.com",
-        "password": "Admin12345!"
+        "password": "Admin12345!",
+        "errorMessage": "ERROR: 'Wrong email or password.' message is not displayed"
     },
     {
         "description": "Incorrect email address",
         "email": "jared.salinas@yopmail.com",
-        "password": "Admin12345!"
+        "password": "Admin12345!",
+        "errorMessage": "ERROR: 'Please enter a valid email address.' message is not displayed"
     },
     {
         "description": "Wrong password data",
         "email": "jared.salinas@wizeline.com",
-        "password": "Admin"
+        "password": "Admin",
+        "errorMessage": "ERROR: 'Passwords must be at least 8 characters long.' message is not displayed"
     },
     {
         "description": "Blank data in login",
         "email": "",
-        "password": ""
+        "password": "",
+        "errorMessage": "ERROR: 'Wrong email or password.' message is not displayed"
+    },
+    {
+        "description": "Correct data, invalid login",
+        "email": "",
+        "password": "",
+        "errorMessage": "ERROR: the dashboard page is not visible"
     }
 ]

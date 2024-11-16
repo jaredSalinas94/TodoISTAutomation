@@ -10,8 +10,8 @@ class MainPage {
     /**
      * Go to landing page
      */
-    async goTo() {
-        await this.page.goto("https://todoist.com/");
+    async goTo(url) {
+        await this.page.goto(url);
     }
 
     /**

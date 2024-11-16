@@ -7,7 +7,8 @@ class SlackNotificationUtils {
         const slackWebhookUrl = process.env.webhook;
         try {
             await axios.post(slackWebhookUrl, {
-            text: message,  // The message you want to send
+            text: message,
+              // The message you want to send
          });
         console.log('Slack message sent!');
         } catch (error) {

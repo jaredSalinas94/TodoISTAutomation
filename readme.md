@@ -6,12 +6,20 @@ The automation was made in Playwrigth and Javascript.
 ## Autor
 
 **Jared Salinas**  
-[Perfil de GitHub](https://github.com/Rin94)  
-[Correo Electrónico](mailto:jared.salinas@wizeline.com)
+[GitHub profile](https://github.com/Rin94)  
+[email](mailto:jared.salinas@wizeline.com)
+
+## Tools
+
+[Node.js](https://nodejs.org/en) Download Node.js
+
+[Playwright.dev](https://playwright.dev/docs/intro) Install Playwright
+
+>npm init playwright@latest
 
 ## Pre requisites
 
-Run in the terminal
+Run in the terminal, to install another dependencies
 
 >np install
 
@@ -44,7 +52,9 @@ Run in the terminal the line with one of this options
 Run in terminal with one of these options:
 
 >npx playwright test <b>--headed</b>
+
 <br/>
+
 >npx playwright test --project=browsername <b>--headed</b>
 
 ## Execute in Browser stack
